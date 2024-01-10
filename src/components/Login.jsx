@@ -12,7 +12,7 @@ const Login = ({ onLogin }) => {
         // Puedes usar fetch() u otra biblioteca como axios
 
         try {
-            const response = await fetch('http://localhost:8080/api/login', {
+            const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

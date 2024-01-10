@@ -10,7 +10,7 @@ import OrdenCompra from '../components/OrdenCompra/OrdenCompra';
 
 const RouterApp = () => {
 
-  const apiUrl = 'http://localhost:8080/';
+  const apiUrl = 'https://storejzg-spring-boot.azurewebsites.net/';
   return (
     <Router>
       <div>

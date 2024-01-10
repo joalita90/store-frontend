@@ -23,8 +23,8 @@ const OrdenCompra = (apiUrl) => {
   
   const obtenerClientes = async () => {
     try {      
-      console.log('http://localhost:8080/api/client');
-        const response = await fetch('http://localhost:8080/api/client');        
+      console.log('https://storejzg-spring-boot.azurewebsites.net/api/client');
+        const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/client');        
         if (response.ok) {
             const data = await response.json();
             setClientes(data);
@@ -39,7 +39,7 @@ const OrdenCompra = (apiUrl) => {
 
   const obtenerProductos = async () => {
     try {      
-        const response = await fetch('http://localhost:8080/api/product');        
+        const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/product');        
         if (response.ok) {
             const data = await response.json();
             setProducts(data);
@@ -113,7 +113,7 @@ const OrdenCompra = (apiUrl) => {
             body: JSON.stringify(orderData)
         };
 
-        const response = await fetch('http://localhost:8080/api/order', requestOptions);
+        const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/order', requestOptions);
         if (response.ok) {
             const dataNew = await response.json();
             
