@@ -24,7 +24,7 @@ const OrdenCompra = (apiUrl) => {
   const obtenerClientes = async () => {
     try {      
       console.log('https://storejzg-spring-boot.azurewebsites.net/api/client');
-        const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/client');        
+        const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/client', { mode: 'no-cors' });
         if (response.ok) {
             const data = await response.json();
             setClientes(data);
@@ -39,7 +39,7 @@ const OrdenCompra = (apiUrl) => {
 
   const obtenerProductos = async () => {
     try {      
-        const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/product');        
+        const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/product', { mode: 'no-cors' });        
         if (response.ok) {
             const data = await response.json();
             setProducts(data);
@@ -110,7 +110,8 @@ const OrdenCompra = (apiUrl) => {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(orderData)
+            body: JSON.stringify(orderData),
+            mode: 'no-cors'
         };
 
         const response = await fetch('https://storejzg-spring-boot.azurewebsites.net/api/order', requestOptions);

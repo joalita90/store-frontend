@@ -15,7 +15,7 @@ const Empresa = ({apiUrl, setIsAuthenticated }) => {
 
   const obtenerData = async () => {
     try {        
-        const response = await fetch(urlApi);        
+        const response = await fetch(urlApi, { mode: 'no-cors' });
         if (response.ok) {
             const data = await response.json();
             setEmpresas(data);
@@ -63,7 +63,8 @@ const Empresa = ({apiUrl, setIsAuthenticated }) => {
   const deleteData = async (id) => {
     try {   
         const requestOptions = {
-          method: 'DELETE'
+            method: 'DELETE',
+            mode: 'no-cors'
         };
 
         const response = await fetch(urlApi + '/' + id, requestOptions);

@@ -60,7 +60,8 @@ const InventarioAdd = ({urlApi, productos, setProductos, setIsAdding }) => {
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(producto)
+                body: JSON.stringify(producto),
+                mode: 'no-cors'
             };
 
             const response = await fetch(urlApi, requestOptions);

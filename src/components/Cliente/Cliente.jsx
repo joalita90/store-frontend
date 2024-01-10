@@ -15,7 +15,7 @@ const Inventario = ({apiUrl, setIsAuthenticated }) => {
   
     const obtenerData = async () => {
       try {        
-          const response = await fetch(urlApi);        
+          const response = await fetch(urlApi, { mode: 'no-cors' });        
           if (response.ok) {
               const data = await response.json();
               setClientes(data);
@@ -66,7 +66,7 @@ const Inventario = ({apiUrl, setIsAuthenticated }) => {
             method: 'DELETE'
           };
   
-          const response = await fetch(urlApi + '/' + id, requestOptions);
+          const response = await fetch(urlApi + '/' + id, requestOptions, { mode: 'no-cors' });
           if (response.ok) {
               obtenerData();
           } else {
