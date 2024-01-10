@@ -46,8 +46,7 @@ const InventarioAdd = ({urlApi, clientes, setClientes, setIsAdding }) => {
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(cliente),
-                mode:'no-cors'
+                body: JSON.stringify(cliente)
             };
 
             const response = await fetch(urlApi, requestOptions);

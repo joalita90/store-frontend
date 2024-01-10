@@ -54,8 +54,7 @@ const EmpresaAdd = ({urlApi, loading, empresas, setEmpresas, setIsAdding }) => {
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(empresa),
-                mode:'no-cors'
+                body: JSON.stringify(empresa)
             };
 
             const response = await fetch(urlApi, requestOptions);

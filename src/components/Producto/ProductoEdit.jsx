@@ -56,8 +56,7 @@ const ProductoEdit = ({urlApi, productos, selectedProducto, setProductos, setIsE
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(producto),
-            mode: 'no-cors'
+            body: JSON.stringify(producto)
         };
 
         const response = await fetch(urlApi + '/' + id, requestOptions);

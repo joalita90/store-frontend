@@ -16,7 +16,7 @@ const Producto = ({apiUrl, setIsAuthenticated }) => {
   
     const obtenerData = async () => {
       try {        
-          const response = await fetch(urlApi, { mode: 'no-cors' });
+          const response = await fetch(urlApi);        
           if (response.ok) {
               const data = await response.json();
               setProductos(data);
@@ -64,8 +64,7 @@ const Producto = ({apiUrl, setIsAuthenticated }) => {
     const deleteData = async (id) => {
       try {   
           const requestOptions = {
-              method: 'DELETE',
-                mode: 'no-cors'
+            method: 'DELETE'
           };
   
           const response = await fetch(urlApi + '/' + id, requestOptions);
